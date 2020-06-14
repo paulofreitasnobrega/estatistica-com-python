@@ -3,10 +3,10 @@
 
 Repositório contendo exercícios desenvolvidos para o curso **Estatística com Python parte 1: Frequências e Medidas** elaborado pela Alura.
 
-Nível: Básico
-Aluno: Paulo Freitas Nobrega
-Professor: Rodrigo Fernando Dias
-Link do Curso: https://cursos.alura.com.br/course/estatistica-distribuicoes-e-medidas
+- Nível: Básico
+- Aluno: Paulo Freitas Nobrega
+- Professor: Rodrigo Fernando Dias
+- Link do Curso: https://cursos.alura.com.br/course/estatistica-distribuicoes-e-medidas
 
 **Conteúdo:**
 - Média, mediana e moda
