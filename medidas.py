@@ -24,7 +24,7 @@ def media(conjunto: list) -> float:
     return round(sum(conjunto)/len(conjunto), 6)
 
 
-def media_aparada(conjunto: list, corte: float=0) -> float:
+def media_aparada(conjunto: list, corte: float = 0) -> float:
     """Calcula a média aparada de um conjunto de dados"""
     c, n, p = sorted(conjunto), len(conjunto), round(corte*10)
 
@@ -40,7 +40,7 @@ def media_ponderada(conjunto: list, pesos: list) -> float:
     if len(conjunto) != len(pesos):
         raise ValueError("Conjuntos com números de registros diferentes")
 
-    mult = [registro*pesos[i] for i,registro in enumerate(conjunto)]
+    mult = [registro*pesos[i] for i, registro in enumerate(conjunto)]
 
     return round(sum(mult)/sum(pesos), 6)
 
@@ -50,7 +50,7 @@ def mediana(conjunto: list) -> float:
     c, n = sorted(conjunto), len(conjunto)
 
     # impariedade
-    impariedade = True if n%2 else False
+    impariedade = True if n % 2 else False
 
     # ref centro do conjunto
     meio = n//2
@@ -62,23 +62,20 @@ def percentis(conjunto: list, percentis: list) -> list:
     """Calcula os percentis de um conjunto de dados"""
     c, n = sorted(conjunto), len(conjunto)
 
-    # converter em inteiro
-    ci = lambda numero: int(numero)
-
     # divisao
     # (i*n/100) - contudo os percentis são atribuidos em
     # em porcentagem. [.5] = 50%. Assim ignora-se a divisão.
     p = [i*n for i in percentis]
 
-    # Se a divisão resultar num número fracionário, arredonde-o 
+    # Se a divisão resultar num número fracionário, arredonde-o
     # para cima (em programação, por índices começarem em 0, se
-    # arredonda para baixo) e o valor do quartil será a observação 
+    # arredonda para baixo) e o valor do quartil será a observação
     # encontrada nesta posição.
 
-    # Se a divisão for um número inteiro, o quartil será a média 
-    # aritmética da observação que ocupar a posição encontrada 
+    # Se a divisão for um número inteiro, o quartil será a media
+    # aritmética da observação que ocupar a posição encontrada
     # com a observação que ocupar a posição imediatamente seguinte.
-    return [c[ci(x)] if x%2 else media([c[ci(x)-1], c[ci(x)]]) for x in p]
+    return [c[int(x)] if x % 2 else media([c[int(x)-1], c[int(x)]]) for x in p]
 
 
 def desvio_medio_absoluto(conjunto: list) -> float:
@@ -90,7 +87,7 @@ def desvio_medio_absoluto(conjunto: list) -> float:
     return round(sum(desvios)/len(conjunto), 6)
 
 
-def desvio_absoluto_mediano(conjunto: list, fator: float=1.4826) -> float:
+def desvio_absoluto_mediano(conjunto: list, fator: float = 1.4826) -> float:
     """Calcula o desvio absoluto mediano da mediana de um conjunto de dados"""
 
     # desvios
@@ -100,7 +97,7 @@ def desvio_absoluto_mediano(conjunto: list, fator: float=1.4826) -> float:
     return round(mediana(desvios)*fator, 6)
 
 
-def variancia(conjunto: list, amostral: bool=True) -> float:
+def variancia(conjunto: list, amostral: bool = True) -> float:
     """Calcula a variância de um conjunto de dados"""
 
     # desvios
@@ -112,7 +109,7 @@ def variancia(conjunto: list, amostral: bool=True) -> float:
     return round(sum(desvios)/n, 6)
 
 
-def desvio_padrao(conjunto: list, amostral: bool=True) -> float:
+def desvio_padrao(conjunto: list, amostral: bool = True) -> float:
     """Calcula o desvio padrão de um conjunto de dados"""
 
     return round(variancia(conjunto, amostral)**.5, 6)
