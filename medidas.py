@@ -1,6 +1,6 @@
-"""
-MEDIDAS SEPARATRIZES E DISPERSÃO
+"""MEDIDAS SEPARATRIZES E DISPERSÃO"""
 
+"""
 Curso: Estatística com Python parte 1: Frequências e Medidas
 https://cursos.alura.com.br/course/estatistica-distribuicoes-e-medidas
 
@@ -21,7 +21,7 @@ Material de apoio:
 
 def media(conjunto: list) -> float:
     """Calcula a média de um conjunto de dados"""
-    return sum(conjunto)/len(conjunto)
+    return round(sum(conjunto)/len(conjunto), 6)
 
 
 def media_aparada(conjunto: list, corte: float=0) -> float:
@@ -42,7 +42,7 @@ def media_ponderada(conjunto: list, pesos: list) -> float:
 
     mult = [registro*pesos[i] for i,registro in enumerate(conjunto)]
 
-    return sum(mult)/sum(pesos)
+    return round(sum(mult)/sum(pesos), 6)
 
 
 def mediana(conjunto: list) -> float:
@@ -87,7 +87,7 @@ def desvio_medio_absoluto(conjunto: list) -> float:
     # desvios
     desvios = [abs(x-media(conjunto)) for x in conjunto]
 
-    return sum(desvios)/len(conjunto)
+    return round(sum(desvios)/len(conjunto), 6)
 
 
 def desvio_absoluto_mediano(conjunto: list, fator: float=1.4826) -> float:
@@ -97,7 +97,7 @@ def desvio_absoluto_mediano(conjunto: list, fator: float=1.4826) -> float:
     desvios = [abs(x-mediana(conjunto)) for x in conjunto]
 
     # fator = fator de escalamento constante
-    return mediana(desvios)*fator
+    return round(mediana(desvios)*fator, 6)
 
 
 def variancia(conjunto: list, amostral: bool=True) -> float:
@@ -109,10 +109,10 @@ def variancia(conjunto: list, amostral: bool=True) -> float:
     # amostral ou populacional
     n = len(conjunto)-1 if amostral else len(conjunto)
 
-    return sum(desvios)/n
+    return round(sum(desvios)/n, 6)
 
 
 def desvio_padrao(conjunto: list, amostral: bool=True) -> float:
     """Calcula o desvio padrão de um conjunto de dados"""
 
-    return variancia(conjunto, amostral)**.5
+    return round(variancia(conjunto, amostral)**.5, 6)
