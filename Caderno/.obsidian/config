@@ -1,5 +1,5 @@
 {
-  "theme": "obsidian",
+  "theme": "moonstone",
   "pluginEnabledStatus": {
     "File explorer": true,
     "Search": true,
@@ -83,6 +83,7 @@
     "collapsed": true
   },
   "lastOpenFiles": [
+    "Medidas de Tendência Central/Média Aritmética.md",
     "Medidas de Tendência Central/Untitled.md"
   ]
 }
