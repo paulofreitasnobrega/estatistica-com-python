@@ -24,3 +24,5 @@ def media(conjunto: list) -> float:
 
 $\bar{x}=\frac{1}{2}$
 
+![formula](https://render.githubusercontent.com/render/math?math={\bar{x}=\frac{1}{2}})
+
