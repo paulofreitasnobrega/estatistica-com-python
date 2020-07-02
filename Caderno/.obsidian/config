@@ -1,0 +1,88 @@
+{
+  "theme": "obsidian",
+  "pluginEnabledStatus": {
+    "File explorer": true,
+    "Search": true,
+    "Quick switcher": true,
+    "Graph view": true,
+    "Backlinks": true,
+    "Command palette": true,
+    "Markdown format importer": true,
+    "Word count": true
+  },
+  "workspaceLayout": {
+    "id": "9c31554eaa312d4e",
+    "type": "split",
+    "children": [
+      {
+        "id": "e3781743ed4fdee2",
+        "type": "leaf",
+        "active": true,
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Medidas de Tendência Central/Média Aritmética.md",
+            "mode": "preview"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "leftSidedock": {
+    "id": "cc852d3fc9d8fc11",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c58b5a55c8509e2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "23827c25551bcfe8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "5f82c50fcac1cb54",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "rightSidedock": {
+    "id": "4bc22fb1dea0ebf3",
+    "type": "split",
+    "children": [
+      {
+        "id": "2fd039e8db50f156",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "24272b2c15ae97f9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "lastOpenFiles": [
+    "Medidas de Tendência Central/Untitled.md"
+  ]
+}
