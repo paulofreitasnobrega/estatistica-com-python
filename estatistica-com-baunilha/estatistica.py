@@ -33,7 +33,7 @@ Utilize este script como um material básico de apoio.
 """
 
 
-# Parte I: Frequências e 
+# Parte I: Frequências e medidas
 
 
 def aparagem(conjunto: list, corte: float = 0) -> list:
@@ -192,8 +192,8 @@ def permutacoes(conjunto: list) -> float:
         # então para cada elemento com frequência > 1,
         # calcula-se o fatorial desta frequência
         repeticoes = [fatorial(y)
-                        for y in [conjunto.count(x)
-                        for x in set(conjunto)] if y > 1]
+                      for y in [conjunto.count(x)
+                      for x in set(conjunto)] if y > 1]
 
         # e o produtorio destas repetiçoes, torna-se
         # um denominador para o todo
