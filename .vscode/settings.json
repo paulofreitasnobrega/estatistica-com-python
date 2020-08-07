@@ -1,0 +1,9 @@
+{
+    "python.linting.enabled": true,
+    "python.pythonPath": "/home/paulofreitasnobrega/anaconda3/envs/estatistica/bin/python",
+    "eslint.nodePath": "",
+    "eslint.options": {    
+    },
+    "python.linting.pylintEnabled": false,
+    "python.linting.pylamaEnabled": true
+}
