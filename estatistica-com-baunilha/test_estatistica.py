@@ -22,8 +22,7 @@ from estatistica import (
     media, media_aparada, media_ponderada, mediana,
     percentis, desvio_medio_absoluto, desvio_absoluto_mediano,
     variancia, desvio_padrao, fatorial, permutacoes, arranjos,
-    combinacoes, dist_binomial_pmf, dist_binomial_cdf,
-    dist_binomial_sf
+    combinacoes
 )
 
 
@@ -119,3 +118,75 @@ def test_desvio_padrao(list: list, expected: list):
 
 
 # Parte II: Probabilidade e Amostragem
+
+
+@pytest.mark.parametrize('n, expected', [
+    (6, 720),
+    # pela definição 1! = 1
+    (1, 1),
+    # pela definição 0! = 1
+    (0, 1)
+])
+def test_fatorial(n: int, expected: int):
+    """Testa a função fatorial"""
+    assert fatorial(n) == expected
+
+
+@pytest.mark.parametrize('list, expected', [
+    # quantas permutações é possível realizar em um conjunto
+    # de 6 letras sem repetições {A,B,C,D,E,F}
+    (['A', 'B', 'C', 'D', 'E', 'F'], 720),
+
+    # quantas permutações é possível realizar em um conjunto
+    # de 6 letras com repetições {A,A,A,R,S,A}
+    # {A,A,A} = 3! = 6 | {R,R} = 2! = 2 | 6.2 = 12 repetições
+    (['A', 'A', 'A', 'R', 'S', 'R'], 60),
+
+    # a quantidade de permutações de um conjunto vazio
+    # Contudo: USUALMENTE, N DEVE SEMPRE SER > 0
+    ([], 1)
+])
+def test_permutacoes(list: list, expected: float):
+    """Testa a função permutacões"""
+    assert permutacoes(list) == expected
+
+
+@pytest.mark.parametrize('n, k, expected', [
+    # possuimos 8 cores e queremos pintar uma bandeira
+    # de 5 listras, cada listra de uma cor. Quantos
+    # arranjos (sequências) podemos formar
+    ([1, 2, 3, 4, 5, 6, 7, 8], 5, 6720),
+
+    # a quantidade de arranjos de um conjunto com apenas
+    # 1 elemento
+    ([1], 1, 1),
+
+    # a quantidade de arranjos de um conjunto vazio
+    # Contudo: USUALMENTE, N e K DEVEM SEMPRE SEREM > 0
+    ([], 0, 1)
+])
+def test_arranjos(n, k, expected: float):
+    """Testa a função arranjos"""
+    assert arranjos(n, k) == expected
+
+
+@pytest.mark.parametrize('n, k, expected', [
+    # em uma empresa de 10 funcionários, deseja-se formar
+    # uma comissão de 3 membros. Quantas combinações
+    # são possíveis
+    ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3, 120),
+
+    # caso especial 1: n = k
+    (5, 5, 1),
+
+    # caso especial 2: k = 0
+    # o único subconjunto com 0 elementos é o vazio
+    (5, 0, 1),
+
+    # caso especial 3: n = k = 0
+    # o único subconjunto do conjunto vazio é o próprio vazio
+    (0, 0, 1)
+])
+def test_combinacoes(n, k, expected: float):
+    """Testa a função combinacões"""
+    assert combinacoes(n, k) == expected
