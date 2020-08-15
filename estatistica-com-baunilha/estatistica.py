@@ -170,15 +170,16 @@ def desvio_padrao(conjunto: list, amostral: bool = True) -> float:
 
 def fatorial(n: int) -> int:
     """
-    Calcula o fatorial de um número
+    Calcula o produto de todos os inteiros positivos menores
+    ou iguais a n
     """
     return 1 if n < 1 else n * fatorial(n-1)
 
 
 def permutacoes(conjunto: list) -> float:
     """
-    Calcula a qauntidade de arranjos com a totalidade
-    dos elementos do conjunto
+    Calcula a quantidade de arranjos possíveis, onde cada arranjo,
+    possui a totalidade dos elementos do conjunto
     """
 
     n = len(conjunto)
@@ -208,15 +209,16 @@ def permutacoes(conjunto: list) -> float:
 
 def arranjos(n, k: int) -> float:
     """
-    Calcula a quantidade de arranjos possíveis,
-    de um conjunto de tamanho n, tomados k a k
+    Calcula a quantidade de sequências ordenadas, formada
+    de k elementos distintos, tomados k a k, escolhidos entre
+    os n existentes.
+
+    Cada arranjo difere dos demais:
+    pela sua natureza (1,3) != (3,5)
+    pela sua ordem (1,3) != (3,1)
     """
 
-    # arranjos distingue-se:
-    # - pela sua natureza (1,3) != (3,5)
-    # - pela sua ordem (1,3) != (3,1)
-
-    # quando n for um conjunto de elementos, então
+    # quando n for um conjunto de elementos (list), então
     # atribui à n a quantidade de elementos do conjunto
     n = len(n) if isinstance(n, list) else n
 
@@ -225,13 +227,12 @@ def arranjos(n, k: int) -> float:
 
 def combinacoes(n, k: int) -> float:
     """
-    Calcula a quantidade de combinações possíveis,
-    de um conjunto de tamanho n, tomados k a k
-    """
+    Calcula a quantidade de conjuntos, formados de k elementos possíveis,
+    tomados k a k, escolhidos entre os n existentes
 
-    # combinações distingue-se:
-    # - pela sua natureza (1,3) != (3,5)
-    # - MAS NÃO pela sua ordem (1,3) == (3,1)
+    Cada combinação difere das demais apenas:
+    pela sua natureza (1,3) != (3,5)
+    """
 
     return arranjos(n, k) / fatorial(k)
 
